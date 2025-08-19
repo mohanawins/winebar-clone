@@ -1,0 +1,139 @@
+/* ===== Theme ===== */
+:root{
+  --cream: #efe6d9;
+  --cream-2:#f3eee6;
+  --tan:   #c4a27d;
+  --tan-600:#b38b66;
+  --ink:   #1b1b1b;
+  --overlay: rgba(0,0,0,.55);
+  --overlay-strong: rgba(0,0,0,.7);
+  --white:#fff;
+}
+
+/* Page bg under everything */
+.page { background: var(--cream); color: var(--ink); }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 64vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transform: scale(1.04);
+  filter: brightness(.65);
+}
+.overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(110% 110% at 50% 55%, var(--overlay) 0%, var(--overlay-strong) 80%);
+}
+.inner { position: relative; z-index: 1; text-align: center; padding: 5rem 1rem 6rem; }
+.kicker {
+  font-family: "Cormorant Garamond", "Times New Roman", ui-serif, Georgia, serif;
+  color: #eae6e1; text-transform: uppercase; letter-spacing: .06em;
+  font-size: clamp(.95rem, 1.8vw, 1.1rem); margin-bottom: .5rem;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
+}
+.title {
+  font-family: "Cormorant Garamond", "Times New Roman", ui-serif, Georgia, serif;
+  font-weight: 400; text-transform: uppercase; letter-spacing: .04em;
+  font-size: clamp(2.6rem, 7vw, 5rem); line-height: 1.05;
+  color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,.35); margin: 0;
+}
+.rule { width: 46px; height: 2px; background: rgba(255,255,255,.85); margin: 1.1rem auto 0; }
+
+/* ===== STRIPE (two-column section) ===== */
+.strip {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* left wider */
+  min-height: 560px;
+}
+
+/* LEFT (parchment content) */
+.leftPane {
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  padding: 3rem 1rem;
+}
+.leftInner {
+  width: min(92%, 540px);
+  text-align: center;
+  color: #f3efe9;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+.leftHeading {
+  font-family: "Cormorant Garamond", "Times New Roman", ui-serif, Georgia, serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 1.25rem;
+}
+.block { margin: 1.35rem 0; }
+.label {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .9rem;
+  color: #efe8df;
+  margin-bottom: .35rem;
+}
+.link {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.link:hover { color: #ffe3b0; }
+.hours { margin: .1rem 0; }
+
+/* RIGHT (form) */
+.rightPanel {
+  background: var(--cream-2);
+  display: grid;
+  place-items: center;
+  padding: 2.5rem 1rem;
+}
+.panelInner { width: min(92%, 720px); }
+.panelTitle {
+  font-family: "Cormorant Garamond", "Times New Roman", ui-serif, Georgia, serif;
+  text-transform: uppercase; letter-spacing: .05em; font-weight: 400;
+  font-size: clamp(1.4rem, 3.5vw, 2rem); color: #2b2b2b; margin: 0;
+}
+.panelRule { width: 44px; height: 2px; background: #b9b0a4; margin: .65rem 0 1.2rem; }
+
+.form { display: grid; gap: 1rem; }
+
+/* Two-column row for first/last name */
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 640px){ .row { grid-template-columns: 1fr; } }
+
+.field label { display:block; font-weight:600; margin-bottom:.35rem; }
+.field input, .field textarea {
+  width:100%; border:1px solid #d9d3c9; background:#fff;
+  border-radius:10px; padding:.75rem .9rem; font:inherit; color:var(--ink);
+}
+.field input:focus, .field textarea:focus {
+  outline:none; border-color:var(--tan); box-shadow:0 0 0 3px rgba(196,162,125,.18);
+}
+.hint { display:block; font-size:.8rem; color:#8b8073; margin-top:.25rem; }
+.invisible { visibility:hidden; height:0; margin:0; padding:0; }
+
+.actions { margin-top: .5rem; }
+.btn {
+  appearance: none; cursor: pointer; font-weight: 600;
+  border-radius: 10px; padding: .75rem 1.2rem;
+  border: 1px solid transparent; transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btnPrimary { background: var(--tan); border-color: var(--tan); color: var(--ink); }
+.btnPrimary:hover { background: var(--tan-600); border-color: var(--tan-600); }
+
+/* Responsive: stack columns */
+@media (max-width: 1024px){
+  .strip { grid-template-columns: 1fr; }
+  .rightPanel { padding-top: 1.25rem; }
+}

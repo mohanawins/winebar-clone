@@ -1,0 +1,108 @@
+.header {
+  position: fixed;     /* or sticky; fixed is more common for this style */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(51, 51, 51, 0.9); /* your dark tone */
+  backdrop-filter: blur(6px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #fff;
+}
+
+.navLeft, .navRight {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: #e8e2d6;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  color: #c4a27d;
+}
+
+.active {
+  border-bottom: 2px solid #c4a27d;
+  color: #c4a27d;
+}
+
+.brand {
+  text-align: center;
+}
+
+.brandCircle {
+  border: 2px solid #c4a27d;
+  border-radius: 50%;
+  padding: 1rem 2rem;
+  display: inline-block;
+  color: #fff;
+}
+
+.brandName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.brandSubtitle {
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.brandEst {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  color: #c4a27d;
+}
+
+/* Floating buttons */
+.buttonContainer {
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.primaryButton {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primaryButton:hover {
+  background: #1d4ed8;
+}
+
+.secondaryButton {
+  background: #fff;
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background: #f1f1f1;
+}
