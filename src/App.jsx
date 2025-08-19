@@ -1,6 +1,6 @@
 // App.jsx
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -15,7 +15,7 @@ import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return (
-    <>
+    <HashRouter>
       <Navbar />
       <main className="with-navbar">
         <Routes>
@@ -37,6 +37,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </HashRouter>
   );
 }
