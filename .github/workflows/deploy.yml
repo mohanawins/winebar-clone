@@ -2,7 +2,7 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # 👈 make sure your branch is "main"
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: cp dist/index.html dist/404.html
+      - run: cp dist/index.html dist/404.html   # SPA fallback for React Router
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
