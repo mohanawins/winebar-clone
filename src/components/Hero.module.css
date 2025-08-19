@@ -1,0 +1,66 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("https://images.unsplash.com/photo-1597290282695-edc43d0e7129?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFyfGVufDB8fDB8fHww")
+    no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* Dark overlay */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+/* Main Title */
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+/* Button */
+.button {
+  background: white;
+  color: black;
+  padding: 0.85rem 2.5rem;
+  font-size: 1rem;
+  font-family: "Cormorant Garamond", serif;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.button:hover {
+  background: #f3f4f6; /* Light gray hover */
+}

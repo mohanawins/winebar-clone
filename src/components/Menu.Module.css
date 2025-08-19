@@ -1,0 +1,83 @@
+/* Section + heading */
+.section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f9fafb;
+}
+.heading {
+  font-size: 2rem;
+  font-family: serif;
+  margin-bottom: 2rem;
+}
+
+/* === GRID: exactly 4 columns on desktop === */
+.wineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 fixed columns */
+  gap: 1.25rem;
+  align-items: start;
+  justify-items: center; /* center cards within their cells */
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;         /* let grid control width */
+  max-width: 220px;    /* keeps each card narrow to fit 4 cols */
+}
+.card:hover { transform: translateY(-2px); }
+
+/* === IMAGE: smaller width & height ===
+   - imageWrap defines the visible box
+   - .img is scaled down to fit inside it (no cropping) */
+/* Image wrapper: increase box height */
+.imageWrap {
+  width: 100vw;
+  height: 100%;          /* was 90px → now taller (try 120–160px as needed) */
+  padding: 0.55rem;       /* slightly more padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Image itself: allow larger scaling */
+.img {
+  max-width: 100%;         /* was 80% → image fills more horizontally */
+  max-height: 100%;       /* capped by wrapper height */
+  object-fit: contain;    /* prevent cropping */
+  display: block;
+}
+
+
+/* Text */
+.wineName {
+  font-size: 0.9rem;
+  line-height: 1.35;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+.price {
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Responsive: fewer columns on smaller screens */
+@media (max-width: 1024px) {
+  .wineGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .wineGrid { grid-template-columns: 1fr; }
+  .imageWrap { height: 80px; }
+  .img { max-width: 75%; }
+}

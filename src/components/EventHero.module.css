@@ -1,0 +1,109 @@
+.hero {
+  position: relative;
+  min-height: 80vh;             /* tall hero; adjust to 70–100vh */
+  width: 100%;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Background image */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.05);       /* subtle zoom to avoid banding at edges */
+  filter: brightness(0.65);     /* base darkening */
+}
+
+/* Extra vignette/overlay for readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 50% 60%, rgba(0,0,0,0.25), rgba(0,0,0,0.65));
+}
+
+/* Content wrapper */
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 1rem;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 1.25rem;
+}
+
+/* small line above headline */
+.rule {
+  width: 60px;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  margin-bottom: 0.25rem;
+}
+
+/* Big serif title like the reference */
+.title {
+  font-family: "Times New Roman", ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-transform: uppercase;
+  display: grid;
+  gap: 0.1em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.subtitle {
+  max-width: 900px;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  appearance: none;
+  padding: 0.9rem 1.25rem;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btnPrimary {
+  background: #caa37a;      /* warm tan like screenshot */
+  color: #1a1a1a;
+  border-color: #caa37a;
+}
+.btnPrimary:hover { background: #b88f63; border-color: #b88f63; }
+
+.btnGhost {
+  background: rgba(255,255,255,0.95);
+  color: #1a1a1a;
+  border-color: rgba(255,255,255,0.95);
+}
+.btnGhost:hover { background: #ffffff; }
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .inner { padding: 4rem 1rem; }
+  .subtitle { letter-spacing: 0.03em; }
+}

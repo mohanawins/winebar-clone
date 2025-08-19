@@ -1,0 +1,51 @@
+/* Footer.module.css */
+.footer {
+  background-color: #f9fafb; /* gray-100 */
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 2.5rem;
+}
+
+.contact {
+  margin-bottom: 1.5rem;
+}
+
+.contact h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact p {
+  margin-top: 0.5rem;
+  color: #374151; /* gray-700 */
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.icon {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon:hover {
+  background: #e5e7eb; /* gray-200 */
+  transform: scale(1.1);
+}
+
+.copyright {
+  color: #6b7280; /* gray-500 */
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
